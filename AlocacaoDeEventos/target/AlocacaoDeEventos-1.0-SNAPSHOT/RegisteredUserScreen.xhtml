@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:body> 
+        <ui:composition template="template/common.xhtml">
+            <ui:define name="header">
+                 <h2>Current Registered Users</h2>
+            </ui:define>			
+            <ui:define name="contents">
+                <h:form>
+                    <h:dataTable value="#{registeredusers.users}" var="users" border="1" id="p">
+
+                        <!-- Coluna para o nome -->
+                        <h:column> 
+                            <f:facet name="header">
+                                <h:outputText value="name"/>
+                            </f:facet>
+                            <h:outputText value="#{users.username}"/>			
+                        </h:column>
+
+                        <!-- Coluna para senha -->
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="password"/>
+                            </f:facet>
+                            <h:outputText value="#{users.password}"/>			
+                        </h:column>
+
+                        <!-- Coluna para perfil -->
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="profile"/>
+                            </f:facet>
+                            <h:outputText value="#{users.profile}"/>			
+                        </h:column>
+
+                    </h:dataTable>
+                    <hr/>
+                </h:form>                
+            </ui:define> 
+            
+            <ui:define name="footer">
+                   <h2>Univeridade Federal Fluminense - Ciência da Computação - Desenvolvimento de Aplicações Coorporativas</h2>
+            </ui:define>
+            
+        </ui:composition> 
+    </h:body> 
+</html>	

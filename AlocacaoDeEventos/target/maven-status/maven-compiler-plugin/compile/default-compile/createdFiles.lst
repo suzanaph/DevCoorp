@@ -1,0 +1,5 @@
+Model\RegisteredUsers.class
+Controller\UserController.class
+Model\User.class
+com\mycompany\alocacaodeeventos\Login.class
+Support\TestUsers.class
