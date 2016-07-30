@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:body> 
+        <ui:composition template="template/common.xhtml">
+            <ui:define name="header">
+                <h2>Event App !</h2>
+            </ui:define>			
+            <ui:define name="contents">
+
+                <h:form>
+                    <hr/>
+                    <table >
+                        <tr>
+                            <td>Name :</td>
+                            <td><h:inputText size="30" value="#{user.username}"  /></td>
+                        </tr>
+                        <tr>
+                            <td>Password :</td>
+                            <td><h:inputSecret size="8" value="#{user.password}"  validatorMessage="Password must have  4 through  10 characters">
+                                    <!--f:validateLength minimum="4" maximum="10"/-->
+                                </h:inputSecret></td>
+                        </tr>
+  
+                        <tr>
+                            <td> </td>
+                            <td><h:commandButton value="login" action="#{user.login}" >
+                                    <!--f:ajax execute="@form" render="p" /-->
+                                </h:commandButton></td>
+                        </tr>
+                    </table>
+                </h:form>
+            </ui:define> 
+            <ui:define name="footer">
+                <h2>Univeridade Federal Fluminense - Ciência da Computação - Desenvolvimento de Aplicações Coorporativas</h2>
+            </ui:define>			
+        </ui:composition> 
+    </h:body> 
+</html>	
